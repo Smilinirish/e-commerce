@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Product, Category, Tag, ProductTag } = require("../../models");
+const { Product, Category, Tag, ProductTag } = require("../models");
 
 // The `/api/products` endpoint
 
@@ -115,7 +115,7 @@ router.delete("/:id", async (req, res) => {
       res.status(404).json({ message: "product not found" });
       return;
     }
-    res.status(200).json({ message: "product deleted" });
+    res.status(200).json(pordDelete);
   } catch (err) {
     res.status(400).json(err);
   }
